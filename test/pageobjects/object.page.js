@@ -24,6 +24,16 @@ class Objects extends page {
     return $("//h1/a");
   }
 
+  get btnAddComputer() {
+    return $("//a[@id='add']");
+  }
+
+  table = {
+    get tableHeader() {
+      return $$("//th//a[1]");
+    },
+  };
+
   /**
    * define action methods
    */

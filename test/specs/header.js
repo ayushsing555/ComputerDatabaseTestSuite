@@ -15,4 +15,30 @@ describe("Computer DataBase TestSuite", () => {
     // expect creteria to check header and title equal or not
     chai.expect(title).not.to.equal(header);
   });
+
+  it("should pass for user to see computer assests", async () => {
+    let tableHeaderText = [
+      "Computer name",
+      "Introduced",
+      "Discontinued",
+      "Company",
+    ];
+
+    // expect criteria computer add button existing
+    await expect(objectPage.btnAddComputer).toExist();
+
+    // expect criteria filter button exist
+    await expect(objectPage.btnFilter).toExist();
+
+    // getting header text of the table
+    const tableHeader = await objectPage.table.tableHeader;
+
+    for (let i = 0; i < tableHeader.length; i++) {
+      // getting text table header
+      let a = await tableHeader[i].getText();
+
+      // expect criteria to check table header text
+      chai.expect(a).to.equal(tableHeaderText[i]);
+    }
+  });
 });
