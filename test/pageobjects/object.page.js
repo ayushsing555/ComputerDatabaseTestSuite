@@ -19,6 +19,21 @@ class Objects extends page {
     return $("//input[@id='searchsubmit']");
   }
 
+  // getting header
+  get header() {
+    return $("//h1/a");
+  }
+
+  get btnAddComputer() {
+    return $("//a[@id='add']");
+  }
+
+  table = {
+    get tableHeader() {
+      return $$("//th//a[1]");
+    },
+  };
+
   /**
    * define action methods
    */
