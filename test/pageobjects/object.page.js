@@ -19,6 +19,11 @@ class Objects extends page {
     return $("//input[@id='searchsubmit']");
   }
 
+  // getting header
+  get header() {
+    return $("//h1/a");
+  }
+
   /**
    * define action methods
    */
