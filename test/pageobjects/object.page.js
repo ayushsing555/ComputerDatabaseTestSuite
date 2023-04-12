@@ -28,6 +28,10 @@ class Objects extends page {
     return $("//a[@id='add']");
   }
 
+  get confirmMessage() {
+    return $("//section[@id='main']//div[1]");
+  }
+
   table = {
     get tableHeader() {
       return $$("//th//a[1]");
@@ -42,6 +46,10 @@ class Objects extends page {
   async filterComputer(value) {
     await this.inputComputer.setValue(value);
     await this.btnFilter.click();
+  }
+
+  async addCmputer() {
+    await this.btnAddComputer.click();
   }
 }
 module.exports = new Objects();
